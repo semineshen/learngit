@@ -1,0 +1,38 @@
+#工作区——>暂存区——>版本库
+#编写文件保存在learngit目录下，在该目录文件夹任意处右击选择"git bash here"
+#将文件添加到库的暂存区（若文件名以“readme.txt”为例）
+$git add readme.txt
+#将暂存区的文件提交到库
+$git commit -m "this is first commit"
+#查看工作区的状态
+$git status
+#查看具体修改内容
+$git diff readme.txt
+#查看工作区和版本库里最新版本的区别
+$git diff HEAD -- readme.txt
+#查看提交历史，查看版本ID
+$git log 
+$git log --pretty=oneline
+#查看命令历史
+$git relog
+#将当前版本回退到上一个版本
+$git reset -- hard HEAD^
+#从当前版本回到某一版本
+$git reset --hard 746576(#版本号ID的前几位)
+#查看文件的具体内容
+$cat readme.txt
+#丢弃工作区的修改
+$git checkout --readme.txt
+#丢弃暂存区最新版本的修改
+$git reset HEAD readme.txt
+#丢弃版本库最新版本的修改<=>将最新版本回退到上一个版本
+$git reset -- hard HEAD^
+#删除工作区内的文件
+$rm new.txt
+#删除版本库内的文件
+$git rm new.txt
+$git commit -m "delete some files from repository"
+#将误删的文件恢复到最新版本（git checkout 将版本库的版本替换成工作区的版本，无论工作区的版本是否被删了）
+$git checkout -- new.txt
+#将最新修改推送给GitHub
+$git push origin master
